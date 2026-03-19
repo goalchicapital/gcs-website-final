@@ -1,0 +1,3258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goalchi Capital | Financial Planning Organised Around Life Decisions</title>
+  <meta
+    name="description"
+    content="Goalchi Capital helps clients organise money around life decisions through goal-based planning, retirement thinking, portfolio review, and family continuity."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .container {
+      width: min(100%, 1100px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav .container {
+      width: min(100%, 1180px);
+      max-width: 1180px;
+      padding: 0 18px;
+    }
+
+    main h2 {
+      max-width: 18ch;
+    }
+
+    main p {
+      max-width: 65ch;
+    }
+
+    body.home-reveal-enabled .home-scroll-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    body.home-reveal-enabled .home-scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav {
+      background: transparent;
+      border-bottom: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .nav.scrolled {
+      background: rgba(249, 246, 240, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(35, 50, 67, 0.08);
+      box-shadow: 0 10px 26px rgba(23, 50, 79, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      gap: 22px;
+    }
+
+    .brandmark {
+      position: relative;
+      transform: translate(2px, 5px);
+      transition: transform 220ms ease;
+    }
+
+    .nav.scrolled .brandmark {
+      transform: translate(0, 0);
+    }
+
+    .brandmark-logo {
+      height: 44px;
+      width: auto;
+      max-width: none;
+      filter: brightness(0) invert(1) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+      transition: filter 220ms ease;
+    }
+
+    .nav.scrolled .brandmark-logo {
+      filter: none;
+    }
+
+    .nav-links {
+      gap: 28px;
+    }
+
+    .nav-home,
+    .nav-direct,
+    .mega-trigger {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .nav-home.active,
+    .nav-direct.active,
+    .nav-mega.is-active .mega-trigger,
+    .mega-trigger[aria-expanded="true"] {
+      color: rgba(255, 255, 255, 0.98);
+    }
+
+    .nav.scrolled .nav-home,
+    .nav.scrolled .nav-direct,
+    .nav.scrolled .mega-trigger {
+      color: var(--ink);
+    }
+
+    .nav.scrolled .nav-home.active,
+    .nav.scrolled .nav-direct.active,
+    .nav.scrolled .nav-mega.is-active .mega-trigger,
+    .nav.scrolled .mega-trigger[aria-expanded="true"] {
+      color: var(--navy-strong);
+    }
+
+    .nav-actions {
+      gap: 12px;
+    }
+
+    .nav-login {
+      min-height: 40px;
+      padding: 0 14px;
+      font-size: 0.84rem;
+      line-height: 1;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.96);
+      box-shadow: none;
+    }
+
+    .nav-login:hover {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(255, 255, 255, 0.96);
+      color: var(--navy-strong);
+      box-shadow: none;
+    }
+
+    .nav.scrolled .nav-login {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: rgba(35, 50, 67, 0.12);
+      color: var(--navy-strong);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav.scrolled .nav-login:hover {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(35, 50, 67, 0.18);
+    }
+
+    .mobile-menu summary {
+      color: rgba(255, 255, 255, 0.94);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+
+    .nav.scrolled .mobile-menu summary {
+      color: var(--navy-strong);
+      border-color: rgba(35, 50, 67, 0.12);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .home-hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 154px 0 92px;
+      background:
+        linear-gradient(92deg, rgba(7, 16, 26, 0.9) 0%, rgba(7, 16, 26, 0.82) 16%, rgba(7, 16, 26, 0.58) 30%, rgba(7, 16, 26, 0.26) 45%, rgba(7, 16, 26, 0.08) 60%, rgba(7, 16, 26, 0) 100%),
+        linear-gradient(180deg, rgba(7, 16, 26, 0.1) 0%, rgba(7, 16, 26, 0.03) 42%, rgba(7, 16, 26, 0.1) 100%),
+        url("assets/images/hero-life-balance.jpg") 70% center / cover no-repeat;
+    }
+
+    .home-hero .container {
+      padding-left: 18px;
+      padding-right: 24px;
+    }
+
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 56%, rgba(8, 16, 28, 0.3) 0%, rgba(8, 16, 28, 0.12) 24%, rgba(8, 16, 28, 0) 44%),
+        linear-gradient(180deg, rgba(8, 16, 28, 0.02) 0%, rgba(8, 16, 28, 0.08) 100%);
+      pointer-events: none;
+    }
+
+    .home-hero-grid,
+    .home-story-grid,
+    .home-process-grid,
+    .home-investment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 430px);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .home-hero-grid {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, 620px);
+      gap: 0;
+      justify-content: start;
+      align-items: start;
+      padding-left: 0;
+      padding-top: clamp(74px, 12vh, 128px);
+    }
+
+    .home-story-grid {
+      grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+    }
+
+    .home-hero-copy {
+      max-width: 620px;
+      margin-left: -4px;
+    }
+
+    .home-hero-title {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.98);
+      font-size: clamp(1.95rem, 2.7vw, 2.45rem);
+      line-height: 0.96;
+      letter-spacing: -0.015em;
+      text-wrap: initial;
+      max-width: none;
+    }
+
+    .home-hero-line {
+      display: block;
+      white-space: nowrap;
+    }
+    .home-hero-actions {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      width: auto;
+      max-width: 100%;
+      margin-top: 16px;
+      gap: 12px;
+      padding-left: 0;
+    }
+
+    .home-hero-actions .btn {
+      flex: 0 0 auto;
+      min-height: 48px;
+      padding: 0 18px;
+      font-size: 0.88rem;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: none;
+    }
+
+    .home-hero .btn-primary,
+    .home-hero .btn-secondary {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.96);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .home-hero .btn-primary:hover,
+    .home-hero .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--navy-strong);
+      border-color: rgba(255, 255, 255, 0.96);
+    }
+
+    .home-recognition {
+      position: relative;
+      padding: 80px 0 84px;
+      background:
+        linear-gradient(180deg, rgba(248, 244, 238, 0.98) 0%, rgba(243, 238, 230, 0.98) 100%),
+        radial-gradient(circle at top left, rgba(175, 138, 80, 0.08), transparent 26%);
+    }
+
+    .home-recognition::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: rgba(35, 50, 67, 0.06);
+    }
+
+    .home-recognition-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.68fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .home-recognition-head {
+      max-width: none;
+      margin: 0;
+      text-align: left;
+    }
+
+    .home-recognition-head h2 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(2.35rem, 3.7vw, 3.5rem);
+      line-height: 1.03;
+      text-wrap: balance;
+      max-width: 12ch;
+    }
+
+    .home-recognition-intro {
+      margin: 16px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.72;
+      max-width: 44ch;
+    }
+
+    .home-recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 26px;
+      align-items: start;
+    }
+
+    .home-recognition-card {
+      min-height: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .home-recognition-card::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+      margin-bottom: 16px;
+      background: rgba(35, 50, 67, 0.16);
+    }
+
+    .home-recognition-card h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .home-recognition-card p {
+      margin: 10px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      line-height: 1.72;
+      max-width: 31ch;
+    }
+
+    .home-recognition-transition {
+      max-width: 760px;
+      margin: 34px auto 0;
+      text-align: center;
+      color: var(--navy-strong);
+      font-size: clamp(1.24rem, 1.75vw, 1.5rem);
+      line-height: 1.48;
+      text-wrap: balance;
+    }
+
+    .home-philosophy {
+      position: relative;
+      padding: 72px 0 76px;
+      background:
+        linear-gradient(180deg, rgba(246, 242, 235, 0.98) 0%, rgba(241, 236, 228, 0.98) 100%),
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.07), transparent 24%);
+    }
+
+    .home-philosophy::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: rgba(35, 50, 67, 0.06);
+    }
+
+    .home-philosophy-head {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .home-philosophy-head h2 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(2.25rem, 3.6vw, 3.35rem);
+      line-height: 1.03;
+      text-wrap: balance;
+      max-width: 15ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .home-philosophy-head p {
+      margin: 16px auto 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.74;
+      max-width: 60ch;
+    }
+
+    .home-philosophy-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .home-philosophy-pillar {
+      padding-top: 18px;
+      border-top: 1px solid rgba(35, 50, 67, 0.12);
+    }
+
+    .home-philosophy-pillar h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.28;
+    }
+
+    .home-philosophy-pillar p {
+      margin: 10px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.68;
+      max-width: 27ch;
+    }
+
+    .home-philosophy-close {
+      max-width: 760px;
+      margin: 30px auto 0;
+      text-align: center;
+      color: var(--navy-strong);
+      font-size: clamp(1.18rem, 1.6vw, 1.4rem);
+      line-height: 1.46;
+      text-wrap: balance;
+    }
+
+    .home-action-story {
+      --story-progress: 0;
+      position: relative;
+      padding: 72px 0 78px;
+      background:
+        linear-gradient(180deg, rgba(247, 243, 236, 0.98) 0%, rgba(241, 236, 228, 0.98) 100%),
+        radial-gradient(circle at top left, rgba(175, 138, 80, 0.06), transparent 24%);
+    }
+
+    .home-action-story::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: rgba(35, 50, 67, 0.06);
+    }
+
+    .home-action-shell {
+      display: grid;
+      gap: 30px;
+    }
+
+    .home-action-side {
+      display: grid;
+      gap: 24px;
+      align-content: start;
+    }
+
+    .home-action-copy h2 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.03;
+      text-wrap: balance;
+      max-width: 13ch;
+    }
+
+    .home-action-copy p {
+      margin: 14px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.72;
+      max-width: 42ch;
+    }
+
+    .home-action-progress {
+      display: none;
+    }
+
+    .home-action-progress-track {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      width: max-content;
+      padding-left: 26px;
+    }
+
+    .home-action-progress-track::before,
+    .home-action-progress-track::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+    }
+
+    .home-action-progress-track::before {
+      background: rgba(35, 50, 67, 0.12);
+    }
+
+    .home-action-progress-track::after {
+      background: rgba(19, 42, 68, 0.34);
+      transform: scaleY(var(--story-progress));
+      transform-origin: top;
+      transition: transform 220ms ease;
+    }
+
+    .home-action-progress-step {
+      position: relative;
+      color: rgba(35, 50, 67, 0.44);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      line-height: 1;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    .home-action-progress-step::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -25px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(35, 50, 67, 0.16);
+      transform: translateY(-50%);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .home-action-progress-step.is-active {
+      color: var(--navy-strong);
+      transform: translateX(2px);
+    }
+
+    .home-action-progress-step.is-active::before {
+      background: var(--navy-strong);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .home-action-stage {
+      display: grid;
+      gap: 18px;
+    }
+
+    .home-action-panel {
+      padding-top: 18px;
+      border-top: 1px solid rgba(35, 50, 67, 0.11);
+    }
+
+    .home-action-label {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: rgba(35, 50, 67, 0.56);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      line-height: 1;
+    }
+
+    .home-action-panel h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      line-height: 1.02;
+      text-wrap: balance;
+      max-width: 12ch;
+    }
+
+    .home-action-panel p {
+      margin: 16px 0 0;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.76;
+      max-width: 42ch;
+    }
+
+    @media (min-width: 1025px) {
+      .home-action-story.is-enhanced {
+        min-height: 188vh;
+      }
+
+      .home-action-story.is-enhanced .home-action-shell {
+        position: sticky;
+        top: 108px;
+        grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+        gap: clamp(40px, 6vw, 84px);
+        align-items: start;
+        min-height: calc(100vh - 148px);
+      }
+
+      .home-action-story.is-enhanced .home-action-progress {
+        display: block;
+      }
+
+      .home-action-story.is-enhanced .home-action-stage {
+        position: relative;
+        min-height: 360px;
+        display: block;
+      }
+
+      .home-action-story.is-enhanced .home-action-stage::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 1px;
+        background: rgba(35, 50, 67, 0.11);
+      }
+
+      .home-action-story.is-enhanced .home-action-panel {
+        position: absolute;
+        inset: 0 0 0 0;
+        padding: 0 0 0 34px;
+        border-top: 0;
+        opacity: 0;
+        transform: translateY(22px);
+        pointer-events: none;
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+
+      .home-action-story.is-enhanced .home-action-panel.is-active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    }
+
+    .home-v1-bridge {
+      position: relative;
+      padding: 88px 0 92px;
+      background:
+        linear-gradient(180deg, rgba(249, 246, 240, 0.98) 0%, rgba(244, 239, 231, 0.98) 100%),
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.08), transparent 26%);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .home-v1-head {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: left;
+    }
+
+    .home-v1-head h2 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(2.45rem, 4vw, 3.7rem);
+      line-height: 1.02;
+      text-wrap: balance;
+      max-width: 16ch;
+    }
+
+    .home-v1-head p {
+      margin: 18px 0 0;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 62ch;
+    }
+
+    .home-v1-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .home-v1-pillar {
+      min-height: 100%;
+      padding: 26px 24px 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(35, 50, 67, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 36px rgba(23, 50, 79, 0.05);
+    }
+
+    .home-v1-pillar::before {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 1px;
+      margin-bottom: 18px;
+      background: rgba(35, 50, 67, 0.18);
+    }
+
+    .home-v1-pillar h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .home-v1-pillar p {
+      margin: 12px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      line-height: 1.72;
+      max-width: 24ch;
+    }
+
+.home-section-head,
+.home-reading-copy,
+.home-blog-copy,
+.home-review-divider {
+  text-align: center;
+}
+
+.home-visual-outcomes {
+  height: 100vh;
+  height: 100svh;
+  min-height: 780px;
+  display: grid;
+  grid-template-rows: clamp(170px, 24vh, 230px) minmax(0, 1fr);
+  background: #e5eaee;
+}
+
+.home-visual-outcomes-bar {
+  display: grid;
+  align-content: center;
+  padding: 24px 0 28px;
+  background: #e5eaee;
+}
+
+.home-visual-outcomes-head {
+  width: min(1400px, calc(100vw - 42px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-visual-outcomes-head h2 {
+  margin: 0;
+  color: #5b6674;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.35rem, 3.55vw, 4rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.home-visual-outcomes-head p {
+  margin: 8px auto 0;
+  max-width: none;
+  color: #66707c;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.16rem, 1.95vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+.home-visual-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  width: 100vw;
+  min-height: 0;
+  margin-left: calc(50% - 50vw);
+  background: #d5dbe0;
+}
+
+.home-visual-outcomes-card {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #d9d4cd;
+}
+
+.home-visual-outcomes-media,
+.home-visual-outcomes-card::after {
+  position: absolute;
+  inset: 0;
+}
+
+.home-visual-outcomes-media {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transform: scale(1.001);
+  transition: transform 220ms ease;
+}
+
+.home-visual-outcomes-card::after {
+  content: "";
+  background: linear-gradient(180deg, rgba(9, 18, 29, 0.18) 0%, rgba(9, 18, 29, 0.28) 34%, rgba(9, 18, 29, 0.68) 100%);
+  transition: opacity 220ms ease;
+}
+
+.home-visual-outcomes-card:hover .home-visual-outcomes-media {
+  transform: scale(1.03);
+}
+
+.home-visual-outcomes-card:hover::after {
+  opacity: 0.88;
+}
+
+.home-visual-outcomes-copy {
+  position: absolute;
+  top: 54%;
+  left: clamp(28px, 4vw, 52px);
+  z-index: 1;
+  width: min(420px, calc(100% - 88px));
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.home-visual-outcomes-copy h3 {
+  margin: 0;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2rem, 2.7vw, 2.95rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.home-visual-outcomes-copy p {
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.46;
+}
+
+.home-visual-outcomes-card--organisation .home-visual-outcomes-media {
+  background-image: url("assets/images/home/organisation.jpg");
+}
+
+.home-visual-outcomes-card--clarity .home-visual-outcomes-media {
+  background-image: url("assets/images/home/clarity.jpg");
+}
+
+.home-visual-outcomes-card--direction .home-visual-outcomes-media {
+  background-image: url("assets/images/home/direction.jpg");
+}
+
+.home-visual-outcomes-card--association .home-visual-outcomes-media {
+  background-image: url("assets/images/home/association-life.jpg");
+}
+
+
+
+.home-client-story {
+  padding: 88px 0 92px;
+  background:
+    radial-gradient(circle at top right, rgba(175, 138, 80, 0.05), transparent 22%),
+    linear-gradient(180deg, #f8f4ed 0%, #f3ede4 100%);
+}
+
+.home-client-story-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+}
+
+.home-client-story-side {
+  display: grid;
+  gap: 22px;
+}
+
+.home-client-story-head {
+  max-width: 720px;
+}
+
+.home-client-story-head h2 {
+  margin: 0;
+  color: var(--navy-strong);
+  font-size: clamp(2.45rem, 4.3vw, 4rem);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.home-client-story-head p {
+  margin: 16px 0 0;
+  max-width: 34ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.74;
+}
+
+.home-client-story-progress {
+  display: none;
+}
+
+.home-client-story-stage {
+  max-width: 760px;
+}
+
+.home-client-story-steps {
+  display: grid;
+  gap: 22px;
+}
+
+.home-client-story-step {
+  min-height: auto;
+}
+
+.home-client-story-panel {
+  padding: 0 0 0 22px;
+  border-left: 1px solid rgba(35, 50, 67, 0.12);
+  transition: opacity 220ms ease, transform 220ms ease, border-color 220ms ease;
+}
+
+.home-client-story-count {
+  display: inline-block;
+  color: var(--gold-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.home-client-story-panel h3 {
+  margin: 12px 0 0;
+  color: var(--navy-strong);
+  font-size: clamp(1.9rem, 3.15vw, 2.75rem);
+  line-height: 1.02;
+}
+
+.home-client-story-panel p {
+  margin: 14px 0 0;
+  max-width: 30ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.76;
+}
+
+.home-client-story-close {
+  margin-top: 8px;
+  max-width: 760px;
+  padding: 24px 0 0 22px;
+  border-left: 1px solid rgba(35, 50, 67, 0.12);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.home-client-story-close p {
+  margin: 0;
+  color: var(--navy-strong);
+  font-size: clamp(1.18rem, 1.8vw, 1.5rem);
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+@media (min-width: 1025px) {
+  .home-client-story-shell {
+    grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
+    gap: 60px;
+    align-items: start;
+  }
+
+  .home-client-story-side {
+    position: sticky;
+    top: 118px;
+    gap: 28px;
+    padding-top: 6px;
+  }
+
+  .home-client-story-progress {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .home-client-story-progress-step {
+    position: relative;
+    padding-top: 12px;
+    color: rgba(35, 50, 67, 0.34);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    transition: color 220ms ease, transform 220ms ease;
+  }
+
+  .home-client-story-progress-step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background: rgba(35, 50, 67, 0.12);
+    transition: width 220ms ease, background 220ms ease;
+  }
+
+  .home-client-story-progress-step.is-complete,
+  .home-client-story-progress-step.is-active {
+    color: var(--navy-strong);
+  }
+
+  .home-client-story-progress-step.is-complete::before {
+    width: 30px;
+    background: rgba(175, 138, 80, 0.34);
+  }
+
+  .home-client-story-progress-step.is-active {
+    transform: translateY(-1px);
+  }
+
+  .home-client-story-progress-step.is-active::before {
+    width: 38px;
+    background: rgba(175, 138, 80, 0.62);
+  }
+
+  .home-client-story-step {
+    min-height: 56vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .home-client-story.is-enhanced .home-client-story-panel {
+    opacity: 0.22;
+    transform: translateY(18px);
+    border-left-color: rgba(35, 50, 67, 0.08);
+  }
+
+  .home-client-story.is-enhanced .home-client-story-step.is-complete .home-client-story-panel {
+    opacity: 0.38;
+  }
+
+  .home-client-story.is-enhanced .home-client-story-step.is-active .home-client-story-panel {
+    opacity: 1;
+    transform: none;
+    border-left-color: rgba(175, 138, 80, 0.42);
+  }
+
+  .home-client-story.is-enhanced .home-client-story-close {
+    opacity: 0.24;
+    transform: translateY(18px);
+  }
+
+  .home-client-story.is-enhanced.is-resolved .home-client-story-close {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+    .home-section-head {
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+
+    .home-section-head h2,
+    .home-editorial-copy h2,
+    .home-process-copy h2,
+    .home-investment-copy h2,
+    .home-reading-copy h2,
+    .home-blog-copy h2,
+    .home-review-divider h2 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: clamp(2.7rem, 4.6vw, 4.2rem);
+      line-height: 0.98;
+      text-wrap: balance;
+    }
+
+    .home-section-head h2,
+    .home-reading-copy h2,
+    .home-blog-copy h2,
+    .home-review-divider h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .home-section-head p,
+    .home-reading-copy p,
+    .home-blog-copy p,
+    .home-review-divider p {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+      line-height: 1.76;
+    }
+
+    .home-editorial-copy p,
+    .home-process-copy p,
+    .home-investment-copy p {
+      font-size: 1rem;
+      line-height: 1.76;
+    }
+
+    .home-scene {
+      margin: 0;
+    }
+
+    .scene-frame {
+      position: relative;
+      min-height: 350px;
+      padding: 26px;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(234, 228, 217, 0.88), rgba(219, 231, 239, 0.9)),
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.18), transparent 28%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .scene-frame::before,
+    .scene-frame::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .scene-frame::before {
+      width: 250px;
+      height: 250px;
+      right: -48px;
+      top: -48px;
+    }
+
+    .scene-frame::after {
+      width: 170px;
+      height: 170px;
+      left: -42px;
+      bottom: -42px;
+    }
+
+    .scene-label {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      z-index: 1;
+      max-width: 280px;
+    }
+
+    .scene-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scene-title {
+      color: var(--navy-strong);
+      font-size: 1.58rem;
+      line-height: 1.15;
+    }
+
+    .scene-caption {
+      margin-top: 14px;
+      font-size: 0.91rem;
+      color: var(--ink-faint);
+      line-height: 1.58;
+    }
+
+    .home-editorial-copy p + p {
+      margin-top: 14px;
+    }
+
+    .home-wheel-section {
+      background:
+        radial-gradient(circle at top left, rgba(175, 138, 80, 0.08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f9f6f1 100%);
+    }
+
+    .wheel-support {
+      margin: 16px auto 0;
+      max-width: 560px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .wheel-container {
+      max-width: 600px;
+      margin: 60px auto 0;
+      position: relative;
+    }
+
+    .wheel {
+      position: relative;
+      width: min(100%, 560px);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f7f2ea;
+      box-shadow: var(--shadow-card);
+    }
+
+    .wheel::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(35, 50, 67, 0.08);
+      pointer-events: none;
+    }
+
+    .wheel-segment {
+      position: absolute;
+      inset: 0;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .wheel-segment:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .wheel-segment:focus-visible {
+      outline: 2px solid rgba(35, 72, 103, 0.45);
+      outline-offset: -6px;
+    }
+
+    .wheel-segment span {
+      position: absolute;
+      width: 118px;
+      font-size: 0.95rem;
+      line-height: 1.28;
+      text-align: center;
+      font-weight: 800;
+      color: var(--navy-strong);
+      transform: translate(-50%, -50%);
+    }
+
+    .wheel-segment--goal {
+      clip-path: polygon(50% 50%, 50% 0%, 93% 25%);
+      background: rgba(217, 195, 154, 0.92);
+    }
+
+    .wheel-segment--wealth {
+      clip-path: polygon(50% 50%, 93% 25%, 93% 75%);
+      background: rgba(216, 226, 235, 0.94);
+    }
+
+    .wheel-segment--retirement {
+      clip-path: polygon(50% 50%, 93% 75%, 50% 100%);
+      background: rgba(229, 237, 220, 0.94);
+    }
+
+    .wheel-segment--will {
+      clip-path: polygon(50% 50%, 50% 100%, 7% 75%);
+      background: rgba(239, 228, 209, 0.94);
+    }
+
+    .wheel-segment--nri {
+      clip-path: polygon(50% 50%, 7% 75%, 7% 25%);
+      background: rgba(221, 232, 223, 0.94);
+    }
+
+    .wheel-segment--risk {
+      clip-path: polygon(50% 50%, 7% 25%, 50% 0%);
+      background: rgba(233, 223, 207, 0.94);
+    }
+
+    .wheel-segment--goal span {
+      left: 64%;
+      top: 26%;
+    }
+
+    .wheel-segment--wealth span {
+      left: 79%;
+      top: 50%;
+    }
+
+    .wheel-segment--retirement span {
+      left: 64%;
+      top: 74%;
+    }
+
+    .wheel-segment--will span {
+      left: 36%;
+      top: 74%;
+    }
+
+    .wheel-segment--nri span {
+      left: 21%;
+      top: 50%;
+    }
+
+    .wheel-segment--risk span {
+      left: 36%;
+      top: 26%;
+    }
+
+    .wheel-core {
+      position: absolute;
+      inset: 34%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 233, 0.98));
+      box-shadow: 0 14px 32px rgba(35, 50, 67, 0.08);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .wheel-core strong {
+      color: var(--navy-strong);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+
+    .home-process-section {
+      background:
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.08), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f5f7f9 100%);
+    }
+
+    .home-process-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid rgba(35, 50, 67, 0.1);
+    }
+
+    .home-process-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(35, 50, 67, 0.1);
+    }
+
+    .home-process-number {
+      color: var(--gold);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .home-process-item h3,
+    .home-investment-lines h3,
+    .insight-card h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      line-height: 1.16;
+    }
+
+    .home-process-item p {
+      margin-top: 8px;
+    }
+
+    .home-investment-section {
+      background:
+        radial-gradient(circle at top left, rgba(175, 138, 80, 0.08), transparent 22%),
+        linear-gradient(180deg, #f5ede1 0%, #efe6d8 100%);
+    }
+
+    .home-investment-lines {
+      margin-top: 20px;
+      border-top: 1px solid rgba(35, 50, 67, 0.12);
+    }
+
+    .home-investment-lines article {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(35, 50, 67, 0.12);
+    }
+
+    .home-investment-lines p {
+      margin-top: 8px;
+    }
+
+    .home-reading-section {
+      background:
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.06), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f6f3ed 100%);
+    }
+
+    .home-reading-copy {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .home-reading-copy .btn-row {
+      justify-content: center;
+    }
+
+    .home-blog-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(175, 138, 80, 0.06), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f5ef 72%, #efe6da 100%);
+    }
+
+    .home-blog-section::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 74px;
+      border-top: 1px solid rgba(35, 50, 67, 0.06);
+      background: linear-gradient(180deg, rgba(248, 245, 239, 0) 0%, rgba(235, 227, 216, 0.86) 100%);
+      pointer-events: none;
+    }
+
+    .home-blog-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-blog-copy {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .home-blog-copy .eyebrow {
+      margin-bottom: 14px;
+      color: #143F80;
+      font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .home-blog-copy h2 {
+      max-width: none;
+      margin: 0 auto;
+      font-size: clamp(2.18rem, 3.1vw, 3rem);
+      line-height: 1.04;
+    }
+
+    .home-blog-copy p {
+      max-width: 46ch;
+      margin: 14px auto 0;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.74;
+    }
+
+    .home-blog-rail {
+      position: relative;
+      display: grid;
+      gap: 20px;
+    }
+
+    .home-blog-viewport {
+      overflow: hidden;
+    }
+
+    .home-blog-viewport:focus-visible {
+      outline: 1px solid rgba(23, 50, 79, 0.14);
+      outline-offset: 6px;
+      border-radius: 28px;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .home-blog-track {
+      display: flex;
+      align-items: stretch;
+      gap: 30px;
+      width: 100%;
+      will-change: transform;
+      transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .home-blog-track--instant {
+      transition: none;
+    }
+
+    .home-blog-track .insight-card {
+      flex: 0 0 calc((100% - 60px) / 3);
+      min-width: 0;
+    }
+
+    .insight-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 290px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(35, 50, 67, 0.08);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    .insight-card:hover,
+    .insight-card:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(20, 63, 128, 0.16);
+    }
+
+    .insight-card:focus-visible {
+      outline: none;
+    }
+
+    .insight-card-body {
+      display: grid;
+      gap: 12px;
+    }
+
+    .insight-card h3 {
+      margin: 0;
+      color: var(--navy-strong);
+      font-size: 1.16rem;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .insight-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .insight-card-cta {
+      margin-top: auto;
+      color: #143F80;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease;
+    }
+
+    .insight-card:hover .insight-card-cta,
+    .insight-card:focus-visible .insight-card-cta {
+      transform: translateX(2px);
+    }
+
+    .home-blog-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .home-blog-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #143F80;
+      font-size: 0.94rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .home-blog-footer a::after {
+      content: "→";
+      transition: transform 180ms ease;
+    }
+
+    .home-blog-footer a:hover::after,
+    .home-blog-footer a:focus-visible::after {
+      transform: translateX(2px);
+    }
+
+    .home-conversation-band {
+      padding: 30px 0 34px;
+      background:
+        linear-gradient(180deg, rgba(35, 72, 103, 0.1) 0%, rgba(35, 72, 103, 0.03) 22px, rgba(35, 72, 103, 0) 48px),
+        radial-gradient(circle at top center, rgba(35, 72, 103, 0.05), transparent 26%),
+        linear-gradient(180deg, #f7f4ed 0%, #f2eee7 100%);
+    }
+
+    .home-conversation-band::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(calc(100% - 48px), 1180px);
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(35, 72, 103, 0), rgba(35, 72, 103, 0.28), rgba(35, 72, 103, 0));
+      pointer-events: none;
+    }
+
+    .home-conversation-shell {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      gap: 0;
+      max-width: 470px;
+      margin: 0 auto;
+    }
+
+    .home-conversation-shell h2 {
+      max-width: none;
+      color: var(--gold);
+      font-size: clamp(1.64rem, 2.05vw, 2.16rem);
+      line-height: 1.04;
+      margin: 0;
+    }
+
+    .home-conversation-rule {
+      width: min(100%, 226px);
+      height: 4px;
+      margin-top: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(35, 72, 103, 0.16), rgba(85, 112, 140, 0.44), rgba(35, 72, 103, 0.16));
+    }
+
+    .home-conversation-btn {
+      min-height: 48px;
+      margin-top: 9px;
+      padding: 0 22px;
+      color: rgba(255, 255, 255, 0.96);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(180deg, #9ca0a7 0%, #83868d 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.24),
+        0 12px 24px rgba(35, 50, 67, 0.12);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+    }
+
+    .home-conversation-btn:hover {
+      box-shadow: 0 15px 28px rgba(35, 50, 67, 0.15);
+    }
+
+    .insight-card--loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-faint);
+      text-align: center;
+      min-height: 290px;
+    }
+
+    .home-review-divider {
+      padding: 48px 42px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 240, 230, 0.98)),
+        radial-gradient(circle at top right, rgba(175, 138, 80, 0.2), transparent 28%);
+      box-shadow: var(--shadow-card);
+    }
+
+    .home-review-marks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .home-review-divider .btn-row {
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    @media (max-width: 1024px) {
+      .home-hero-grid,
+      .home-story-grid,
+      .home-process-grid,
+      .home-investment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-recognition-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .home-action-story {
+        padding: 64px 0 68px;
+      }
+
+      .home-action-shell {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .home-philosophy-pillars,
+      .home-recognition-grid,
+      .home-v1-pillars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+.home-visual-outcomes {
+  height: auto;
+  min-height: auto;
+  display: block;
+  padding: 0;
+}
+
+.home-visual-outcomes-bar {
+  padding: 34px 0 36px;
+}
+
+.home-visual-outcomes-head {
+  width: min(1040px, calc(100vw - 34px));
+}
+
+.home-visual-outcomes-head h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  white-space: nowrap;
+}
+
+.home-visual-outcomes-head p {
+  font-size: clamp(1.02rem, 1.8vw, 1.45rem);
+  white-space: nowrap;
+}
+
+.home-visual-outcomes-grid {
+  min-height: 620px;
+}
+
+.home-visual-outcomes-copy {
+  width: min(360px, calc(100% - 72px));
+}
+
+.home-visual-outcomes-copy h3 {
+  font-size: clamp(1.8rem, 2.7vw, 2.35rem);
+}
+
+.home-visual-outcomes-copy p {
+  font-size: 1rem;
+}
+
+
+
+.home-client-story {
+  padding: 78px 0 82px;
+}
+
+.home-client-story-shell {
+  gap: 24px;
+}
+
+.home-client-story-head {
+  max-width: 680px;
+}
+
+.home-client-story-head h2 {
+  font-size: clamp(2.18rem, 4.8vw, 3.2rem);
+}
+
+.home-client-story-stage,
+.home-client-story-close {
+  max-width: 100%;
+}
+
+
+      .home-blog-viewport {
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+      }
+
+      .home-blog-viewport::-webkit-scrollbar {
+        display: none;
+      }
+
+      .home-blog-track {
+        width: max-content;
+        transition: none;
+      }
+
+      .home-blog-track .insight-card {
+        flex: 0 0 min(360px, calc(84vw - 24px));
+        scroll-snap-align: start;
+      }
+
+    }
+
+    @media (max-width: 720px) {
+      .nav .container {
+        padding: 0 14px;
+      }
+
+      .home-hero {
+        min-height: 100svh;
+        align-items: center;
+        padding: 138px 0 74px;
+        background:
+          linear-gradient(92deg, rgba(7, 16, 26, 0.88) 0%, rgba(7, 16, 26, 0.76) 20%, rgba(7, 16, 26, 0.48) 40%, rgba(7, 16, 26, 0.16) 60%, rgba(7, 16, 26, 0.04) 100%),
+          linear-gradient(180deg, rgba(7, 16, 26, 0.08) 0%, rgba(7, 16, 26, 0.04) 42%, rgba(7, 16, 26, 0.1) 100%),
+          url("assets/images/hero-life-balance.jpg") 66% center / cover no-repeat;
+      }
+
+      .home-hero .container {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .home-hero-title,
+      .home-section-head h2,
+      .home-editorial-copy h2,
+      .home-process-copy h2,
+      .home-investment-copy h2,
+      .home-reading-copy h2,
+      .home-blog-copy h2,
+      .home-review-divider h2 {
+        font-size: clamp(2.5rem, 11vw, 3.6rem);
+      }
+
+      .nav-inner {
+        min-height: 74px;
+      }
+
+      .brandmark {
+        transform: translate(0, 3px);
+      }
+
+      .brandmark-logo {
+        height: 40px;
+      }
+
+      .home-hero-title {
+        font-size: clamp(2.05rem, 7.8vw, 2.8rem);
+        line-height: 1;
+        max-width: 18ch;
+      }
+
+      .home-hero-line {
+        white-space: normal;
+      }
+
+      .home-hero-grid {
+        grid-template-columns: minmax(0, 100%);
+        padding-left: 0;
+        padding-top: 48px;
+      }
+
+      .home-hero-copy {
+        max-width: 390px;
+        margin-left: 0;
+      }
+      .home-hero-actions {
+        width: 100%;
+        margin-top: 16px;
+        padding-left: 0;
+      }
+
+      .home-hero-actions .btn {
+        width: 100%;
+      }
+
+      .wheel {
+        width: min(100%, 500px);
+      }
+
+      .wheel-segment span {
+        width: 100px;
+        font-size: 0.85rem;
+      }
+
+      .home-recognition {
+        padding: 70px 0 74px;
+      }
+
+      .home-recognition-head {
+        margin-bottom: 0;
+      }
+
+      .home-philosophy {
+        padding: 62px 0 66px;
+      }
+
+      .home-philosophy-head {
+        margin-bottom: 24px;
+      }
+
+      .home-action-story {
+        padding: 56px 0 60px;
+      }
+
+      .home-action-shell {
+        gap: 24px;
+      }
+
+      .home-action-copy h2 {
+        max-width: 14ch;
+      }
+
+      .home-action-panel {
+        padding-top: 16px;
+      }
+
+      .home-action-panel h3 {
+        font-size: clamp(1.58rem, 7vw, 2.2rem);
+        max-width: 14ch;
+      }
+
+      .home-action-panel p {
+        font-size: 0.96rem;
+      }
+
+      .home-philosophy-pillars,
+      .home-recognition-grid,
+      .home-v1-pillars {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .home-recognition-card,
+      .home-v1-pillar {
+        padding: 0;
+      }
+
+      .home-philosophy-close,
+      .home-recognition-transition {
+        margin-top: 28px;
+        font-size: 1.14rem;
+      }
+
+      .home-v1-bridge {
+        padding: 72px 0 78px;
+      }
+
+.home-v1-head {
+  margin-bottom: 30px;
+}
+.home-visual-outcomes {
+  height: auto;
+  min-height: auto;
+  display: block;
+  padding: 0;
+}
+
+.home-visual-outcomes-bar {
+  padding: 32px 0 34px;
+}
+
+.home-visual-outcomes-head {
+  width: calc(100vw - 28px);
+}
+
+.home-visual-outcomes-head h2 {
+  font-size: clamp(2rem, 8vw, 2.65rem);
+  line-height: 1.02;
+  white-space: normal;
+}
+
+.home-visual-outcomes-head p {
+  font-size: clamp(1.02rem, 5.1vw, 1.28rem);
+  line-height: 1.18;
+  white-space: normal;
+}
+
+.home-visual-outcomes-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: none;
+  width: 100%;
+  margin-left: 0;
+}
+
+.home-visual-outcomes-card {
+  min-height: 265px;
+}
+
+.home-visual-outcomes-copy {
+  top: 50%;
+  left: 24px;
+  width: calc(100% - 48px);
+}
+
+.home-visual-outcomes-copy h3 {
+  font-size: clamp(1.85rem, 8vw, 2.35rem);
+}
+
+.home-visual-outcomes-copy p {
+  font-size: 0.98rem;
+  line-height: 1.42;
+}
+
+
+
+.home-client-story {
+  padding: 70px 0 74px;
+}
+
+.home-client-story-shell {
+  gap: 24px;
+}
+
+.home-client-story-head h2 {
+  font-size: clamp(2.15rem, 8vw, 2.9rem);
+}
+
+.home-client-story-head p {
+  max-width: 32ch;
+  font-size: 0.97rem;
+}
+
+.home-client-story-progress {
+  display: none;
+}
+
+.home-client-story-steps {
+  gap: 18px;
+}
+
+.home-client-story-panel {
+  padding-left: 18px;
+}
+
+.home-client-story-panel h3 {
+  font-size: clamp(1.64rem, 7vw, 2.15rem);
+}
+
+.home-client-story-panel p,
+.home-client-story-close p {
+  font-size: 0.96rem;
+}
+
+.home-client-story-close {
+  padding: 20px 0 0 18px;
+}
+
+
+.home-review-divider {
+        padding: 36px 24px;
+      }
+
+      .home-conversation-band {
+        padding: 24px 0 28px;
+      }
+
+      .home-conversation-shell h2 {
+        font-size: clamp(1.42rem, 6.1vw, 1.86rem);
+      }
+
+      .home-conversation-rule {
+        width: min(100%, 168px);
+        margin-top: 10px;
+      }
+
+      .home-conversation-btn {
+        min-height: 46px;
+        margin-top: 8px;
+        padding: 0 18px;
+        font-size: 0.75rem;
+      }
+
+      .home-blog-track .insight-card {
+        flex-basis: min(320px, calc(88vw - 20px));
+      }
+
+      .home-blog-copy p {
+        max-width: 28ch;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-blog-track,
+      .insight-card,
+      .insight-card-cta,
+      .home-blog-footer a::after {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" id="siteNav"></header>
+
+  <main>
+    <section class="home-hero section">
+      <div class="container home-hero-grid">
+        <div class="home-hero-copy">
+          <h1 class="serif home-hero-title"><span class="home-hero-line">Live the best version of your Life</span><span class="home-hero-line">with the money you have.</span></h1>
+          <div class="btn-row home-hero-actions">
+            <a href="goal-based-planning.html" class="btn btn-primary">Start a Planning Conversation</a>
+            <a href="portfolio-review.html" class="btn btn-secondary">Review Your Current Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Self-Recognition Bridge Section -->
+    <section class="home-recognition section home-scroll-reveal">
+      <div class="container">
+        <div class="home-recognition-layout">
+          <div class="home-recognition-head">
+            <h2 class="serif">You may be doing well financially — and still feel unclear.</h2>
+            <p class="home-recognition-intro">
+              For many families, the challenge is not earning, investing, or saving. It is finding the clarity, structure, and confidence to make every decision work together.
+            </p>
+          </div>
+
+          <div class="home-recognition-grid">
+            <article class="home-recognition-card">
+              <h3>Busy</h3>
+              <p>You are managing work, family, and responsibilities — but rarely get the time to step back and organise the bigger financial picture.</p>
+            </article>
+
+            <article class="home-recognition-card">
+              <h3>Pulled in Different Directions</h3>
+              <p>Investments, liquidity, tax, retirement, and family priorities keep demanding attention separately, even though they are deeply connected.</p>
+            </article>
+
+            <article class="home-recognition-card">
+              <h3>Unclear</h3>
+              <p>You may already own financial products, but still question whether everything is aligned with the Life you want to live.</p>
+            </article>
+
+            <article class="home-recognition-card">
+              <h3>Reactive</h3>
+              <p>Important decisions often happen in response to events, deadlines, or market noise — instead of from a calm, deliberate plan.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="home-recognition-transition serif">Imagine having a Life Driven Financial Plan centered around your values, priorities, and long-term direction.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Goalchi Philosophy -->
+    <section class="home-philosophy section home-scroll-reveal">
+      <div class="container">
+        <div class="home-philosophy-head">
+          <h2 class="serif">A different way to think about your financial life.</h2>
+          <p>At Goalchi Capital, we don’t begin with products. We begin with your Life — and build a structured financial plan around it.</p>
+        </div>
+
+        <div class="home-philosophy-pillars">
+          <article class="home-philosophy-pillar">
+            <h3>Life First</h3>
+            <p>Financial decisions are anchored to your values, priorities, and responsibilities — not market noise.</p>
+          </article>
+
+          <article class="home-philosophy-pillar">
+            <h3>Structured Thinking</h3>
+            <p>Every decision is made in the context of your complete financial picture, not in isolation.</p>
+          </article>
+
+          <article class="home-philosophy-pillar">
+            <h3>Discipline Over Reaction</h3>
+            <p>We reduce noise, avoid impulsive decisions, and bring consistency to long-term execution.</p>
+          </article>
+
+          <article class="home-philosophy-pillar">
+            <h3>Continuity</h3>
+            <p>Your financial life evolves, and your plan evolves with it — across life stages, not just market cycles.</p>
+          </article>
+        </div>
+
+        <p class="home-philosophy-close serif">This is not about managing investments. It is about bringing clarity, structure, and continuity to your financial life.</p>
+      </div>
+    </section>
+
+    <!-- Interactive Action Story Section -->
+    <section class="home-action-story section home-scroll-reveal" data-home-action-story>
+      <div class="container home-action-shell">
+        <div class="home-action-side">
+          <div class="home-action-copy">
+            <h2 class="serif">Where this thinking translates into action.</h2>
+            <p>We help bring every part of your financial life into one structured, coherent framework.</p>
+          </div>
+
+          <div class="home-action-progress" aria-hidden="true">
+            <div class="home-action-progress-track">
+              <span class="home-action-progress-step is-active" data-story-step>01</span>
+              <span class="home-action-progress-step" data-story-step>02</span>
+              <span class="home-action-progress-step" data-story-step>03</span>
+              <span class="home-action-progress-step" data-story-step>04</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-action-stage">
+          <article class="home-action-panel is-active" data-story-panel>
+            <span class="home-action-label">01</span>
+            <h3 class="serif">Life Value Financial Planning</h3>
+            <p>Aligning financial decisions with your life priorities, responsibilities, and long-term direction.</p>
+          </article>
+
+          <article class="home-action-panel" data-story-panel>
+            <span class="home-action-label">02</span>
+            <h3 class="serif">Investment Strategy</h3>
+            <p>Portfolios built to support goals with discipline, role clarity, and perspective.</p>
+          </article>
+
+          <article class="home-action-panel" data-story-panel>
+            <span class="home-action-label">03</span>
+            <h3 class="serif">Risk &amp; Liquidity Structuring</h3>
+            <p>Ensuring stability, flexibility, and preparedness across expected and unexpected life events.</p>
+          </article>
+
+          <article class="home-action-panel" data-story-panel>
+            <span class="home-action-label">04</span>
+            <h3 class="serif">Continuity &amp; Oversight</h3>
+            <p>Keeping your financial life aligned as priorities, responsibilities, and circumstances evolve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Version 1: Connected Decisions Bridge Section -->
+    <section class="home-v1-bridge section home-scroll-reveal">
+      <div class="container">
+        <div class="home-v1-head">
+          <h2 class="serif">Your financial life works better when every decision is connected.</h2>
+          <p>
+            Investments, liquidity, retirement, protection, tax, and succession do not operate in isolation. Strong financial decisions come from seeing the whole picture and structuring each part in relation to the others.
+          </p>
+        </div>
+
+        <div class="home-v1-pillars">
+          <article class="home-v1-pillar">
+            <h3>Investments</h3>
+            <p>Capital allocated with purpose, role clarity, and discipline.</p>
+          </article>
+
+          <article class="home-v1-pillar">
+            <h3>Liquidity</h3>
+            <p>Cash availability aligned to real-life needs and contingencies.</p>
+          </article>
+
+          <article class="home-v1-pillar">
+            <h3>Protection</h3>
+            <p>Risk addressed before it becomes a disruption to the family.</p>
+          </article>
+
+          <article class="home-v1-pillar">
+            <h3>Continuity</h3>
+            <p>Retirement, succession, and long-term stewardship planned with intent.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pad home-scroll-reveal">
+      <div class="container home-story-grid">
+        <figure class="home-scene">
+          <div class="scene-frame">
+            <div class="scene-label">
+              <span class="scene-kicker">Image Placeholder</span>
+              <div class="scene-title serif">Real family in a planning conversation</div>
+            </div>
+          </div>
+          <figcaption class="scene-caption">Use candid, non-staged photography that reflects warmth, trust, and real conversations rather than finance clichés.</figcaption>
+        </figure>
+
+        <div class="home-editorial-copy">
+          <span class="eyebrow">Where planning begins</span>
+          <h2 class="serif">Money decisions rarely arrive one at a time.</h2>
+          <p>
+            A review of the current portfolio often leads to questions about retirement. Retirement planning may lead to questions about parents, children, lifestyle, or succession. In real life, financial choices are usually connected long before anyone writes them down.
+          </p>
+          <p>
+            That is why Goalchi begins with context. Once the life picture is clearer, financial decisions become less reactive and more proportionate to what truly matters.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-wheel-section section section-pad home-scroll-reveal">
+      <div class="container home-section-head">
+        <span class="eyebrow">Wheel Of Life</span>
+        <h2 class="serif">Your financial life works better when its moving parts are planned together.</h2>
+        <p class="wheel-support">Financial decisions are interconnected. Each one affects the other.</p>
+      </div>
+
+      <div class="wheel-container">
+        <div class="wheel" aria-label="Wheel of life services">
+          <a class="wheel-segment wheel-segment--goal" href="goal-based-planning.html">
+            <span>Goal-Based Financial Planning</span>
+          </a>
+          <a class="wheel-segment wheel-segment--wealth" href="wealth-management.html">
+            <span>Wealth Management</span>
+          </a>
+          <a class="wheel-segment wheel-segment--retirement" href="retirement-planning.html">
+            <span>Retirement Planning</span>
+          </a>
+          <a class="wheel-segment wheel-segment--will" href="will-planning.html">
+            <span>Will Planning &amp; Trusts</span>
+          </a>
+          <a class="wheel-segment wheel-segment--nri" href="nri-financial-planning.html">
+            <span>NRI Financial Planning</span>
+          </a>
+          <a class="wheel-segment wheel-segment--risk" href="https://goalchicapital.github.io/risk-profiler/" target="_blank" rel="noreferrer">
+            <span>Risk &amp; Behaviour</span>
+          </a>
+
+          <div class="wheel-core">
+            <strong>Your Financial Life</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-process-section section section-pad home-scroll-reveal">
+      <div class="container home-process-grid">
+        <div class="home-process-copy">
+          <span class="eyebrow">How The Work Unfolds</span>
+          <h2 class="serif">A calmer planning process usually starts with the decision already on your mind.</h2>
+          <p>
+            Some clients begin with a portfolio that feels unclear. Others begin with retirement, family responsibilities, or a continuity question. The process is meant to make those decisions easier to organise, not harder to navigate.
+          </p>
+        </div>
+
+        <ol class="home-process-list">
+          <li class="home-process-item">
+            <span class="home-process-number">01</span>
+            <div>
+              <h3>Start with what matters right now</h3>
+              <p>We begin with the choice, concern, or transition that already feels important in your life.</p>
+            </div>
+          </li>
+          <li class="home-process-item">
+            <span class="home-process-number">02</span>
+            <div>
+              <h3>Bring clarity to cash flow and commitments</h3>
+              <p>Existing obligations, reserves, protection, and near-term needs are made visible before bigger investment decisions are forced.</p>
+            </div>
+          </li>
+          <li class="home-process-item">
+            <span class="home-process-number">03</span>
+            <div>
+              <h3>Organise investments around purpose</h3>
+              <p>Capital is given clearer roles so the portfolio reflects real time horizons instead of becoming a collection of disconnected holdings.</p>
+            </div>
+          </li>
+          <li class="home-process-item">
+            <span class="home-process-number">04</span>
+            <div>
+              <h3>Review as life changes</h3>
+              <p>The plan stays useful because it is revisited as priorities shift, responsibilities grow, and circumstances evolve.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="home-investment-section section section-pad home-scroll-reveal">
+      <div class="container home-investment-grid">
+        <div class="home-investment-copy">
+          <span class="eyebrow">Investment Thinking</span>
+          <h2 class="serif">Investments should not all do the same job.</h2>
+          <p>
+            Some money must grow. Some money must stay steady. Some money must help the family remain resilient when life or markets do not move in a straight line. Good investing starts by recognising those different roles clearly.
+          </p>
+
+          <div class="home-investment-lines">
+            <article>
+              <h3>Growth</h3>
+              <p>Long-range capital can take measured risk when the time horizon is long enough and the family can stay patient through market cycles.</p>
+            </article>
+            <article>
+              <h3>Stability</h3>
+              <p>Nearer-term needs, income planning, and known obligations usually require steadier capital and clearer visibility.</p>
+            </article>
+            <article>
+              <h3>Resilience</h3>
+              <p>Diversification, liquidity, and thoughtful buffers help families remain flexible when markets, business conditions, or life priorities change.</p>
+            </article>
+          </div>
+
+          <div class="btn-row" style="margin-top:28px;">
+            <a href="wealth-management.html" class="btn btn-primary">See Wealth Management</a>
+            <a href="multi-asset-allocation.html" class="btn btn-outline">Open Multi-Asset Allocation</a>
+          </div>
+        </div>
+
+        <figure class="home-scene">
+          <div class="scene-frame">
+            <div class="scene-label">
+              <span class="scene-kicker">Image Placeholder</span>
+              <div class="scene-title serif">Multi-generational family context</div>
+            </div>
+          </div>
+          <figcaption class="scene-caption">Use photography that reflects family continuity and everyday life, not staged gestures or dashboards.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="retiremeant-section section section-pad home-scroll-reveal" data-retiremeant-framework>
+      <div class="container">
+        <h2 class="retiremeant-visually-hidden">RETIRE-MEANT framework</h2>
+
+        <div class="retiremeant-shell">
+          <div class="retiremeant-circle">
+            <svg
+              class="retiremeant-svg"
+              data-retiremeant-svg
+              viewBox="0 0 100 100"
+            ></svg>
+
+            <div class="retiremeant-center">
+              <div class="retiremeant-header">NOW IS THE TIME TO PLAN FOR</div>
+              <div class="retiremeant-detail" data-retiremeant-detail aria-live="polite" aria-atomic="true">RETIRE-MEANT</div>
+            </div>
+          </div>
+
+          <p class="retiremeant-bottomline">
+            Holistic attention across each area ensures your wealth is resilient, and built to compound.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<section class="home-visual-outcomes section home-scroll-reveal">
+  <div class="home-visual-outcomes-bar">
+    <div class="home-visual-outcomes-head">
+      <h2>What working with us brings to your financial life.</h2>
+      <p>A structured, thoughtful approach that brings clarity, alignment, and continuity to every decision.</p>
+    </div>
+  </div>
+
+  <div class="home-visual-outcomes-grid">
+    <article class="home-visual-outcomes-card home-visual-outcomes-card--organisation">
+      <div class="home-visual-outcomes-media" aria-hidden="true"></div>
+      <div class="home-visual-outcomes-copy">
+        <h3>Organisation</h3>
+        <p>Your entire financial life, in one place —<br />structured, visible, and in order.</p>
+      </div>
+    </article>
+
+    <article class="home-visual-outcomes-card home-visual-outcomes-card--clarity">
+      <div class="home-visual-outcomes-media" aria-hidden="true"></div>
+      <div class="home-visual-outcomes-copy">
+        <h3>Clarity</h3>
+        <p>A clear view of where you stand — so every<br />decision is made with understanding, not confusion.</p>
+      </div>
+    </article>
+
+    <article class="home-visual-outcomes-card home-visual-outcomes-card--direction">
+      <div class="home-visual-outcomes-media" aria-hidden="true"></div>
+      <div class="home-visual-outcomes-copy">
+        <h3>Direction</h3>
+        <p>Every decision aligned to your life — not driven by<br />market noise or short-term triggers.</p>
+      </div>
+    </article>
+
+    <article class="home-visual-outcomes-card home-visual-outcomes-card--association">
+      <div class="home-visual-outcomes-media" aria-hidden="true"></div>
+      <div class="home-visual-outcomes-copy">
+        <h3>Association For Life</h3>
+        <p>An ongoing relationship — not a one-time transaction —<br />where your financial life evolves with you.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section class="home-client-story section home-scroll-reveal" data-home-client-story>
+  <div class="container home-client-story-shell">
+    <div class="home-client-story-side">
+      <div class="home-client-story-head">
+        <h2 class="serif">Why Our Clients Work With Goalchi Capital</h2>
+        <p>Because they value clarity, structure, direction, and a relationship that lasts.</p>
+      </div>
+
+      <div class="home-client-story-progress" aria-hidden="true">
+        <span class="home-client-story-progress-step" data-client-progress>01</span>
+        <span class="home-client-story-progress-step" data-client-progress>02</span>
+        <span class="home-client-story-progress-step" data-client-progress>03</span>
+        <span class="home-client-story-progress-step" data-client-progress>04</span>
+      </div>
+    </div>
+
+    <div class="home-client-story-stage">
+      <div class="home-client-story-steps">
+        <article class="home-client-story-step" data-client-step>
+          <div class="home-client-story-panel">
+            <span class="home-client-story-count">01</span>
+            <h3>Organisation</h3>
+            <p>Your entire financial life, in one place — structured, visible, and in order.</p>
+          </div>
+        </article>
+
+        <article class="home-client-story-step" data-client-step>
+          <div class="home-client-story-panel">
+            <span class="home-client-story-count">02</span>
+            <h3>Clarity</h3>
+            <p>A clear view of where you stand — so every decision is made with understanding, not confusion.</p>
+          </div>
+        </article>
+
+        <article class="home-client-story-step" data-client-step>
+          <div class="home-client-story-panel">
+            <span class="home-client-story-count">03</span>
+            <h3>Direction</h3>
+            <p>Every decision aligned to your life — not driven by market noise or short-term triggers.</p>
+          </div>
+        </article>
+
+        <article class="home-client-story-step" data-client-step>
+          <div class="home-client-story-panel">
+            <span class="home-client-story-count">04</span>
+            <h3>Association for Life</h3>
+            <p>An ongoing relationship — not a one-time transaction — where your financial life evolves with you.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="home-client-story-close">
+        <p>This is how wealth begins to support Life with clarity and continuity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="home-blog-section section section-pad home-scroll-reveal">
+      <div class="container">
+        <div class="home-blog-copy">
+          <span class="eyebrow">Insights</span>
+          <h2 class="serif">How We Think About Money and Decisions</h2>
+          <p>Perspectives on wealth, behaviour, and long-term financial outcomes.</p>
+        </div>
+
+        <div class="home-blog-rail" data-home-blog-rail>
+          <div class="home-blog-viewport" data-home-blog-viewport tabindex="0" aria-label="Latest articles from The Logical Advisor">
+            <div class="insights-grid home-blog-track" id="homeBlogFeed" aria-live="polite">
+              <article class="insight-card insight-card--loading">Loading the latest articles...</article>
+              <article class="insight-card insight-card--loading">Loading the latest articles...</article>
+              <article class="insight-card insight-card--loading">Loading the latest articles...</article>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-blog-footer">
+          <a href="https://www.thelogicaladvisor.com/blog/" target="_blank" rel="noreferrer">View all insights</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-conversation-band section">
+      <div class="container">
+        <div class="home-conversation-shell">
+          <h2 class="serif">Bring Your Wealth To Life</h2>
+          <span class="home-conversation-rule" aria-hidden="true"></span>
+          <a href="contact.html" class="btn home-conversation-btn">It Starts With A Conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"></footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const homeFeedUrl = "https://www.thelogicaladvisor.com/blog/feed";
+    const fallbackPosts = [
+      {
+        title: "Why Structured Investing Beats Derivative Trading",
+        link: "https://www.thelogicaladvisor.com/structured-investing-vs-derivative-trading/",
+        excerpt: "A disciplined investment path can build wealth more reliably than short-term speculative trading."
+      },
+      {
+        title: "Amor Fati – The Stoic Mindset Every Investor Needs",
+        link: "https://www.thelogicaladvisor.com/amor-fati/",
+        excerpt: "Investing is not about prediction alone. It is about preparation, behaviour, and composure."
+      },
+      {
+        title: "The Cost of Delay to invest is far greater than you think",
+        link: "https://www.thelogicaladvisor.com/thecostofdelay/",
+        excerpt: "Delaying financial decisions can cost far more than most investors realise over time."
+      },
+      {
+        title: "In India, there’s one financial goal that’s rarely discussed – Supporting your parents in their old age.",
+        link: "https://www.thelogicaladvisor.com/in-india-theres-one-financial-goal-thats-rarely-discussed-supporting-your-parents-in-their-old-age/",
+        excerpt: "A practical reminder that family responsibility is often one of the most important financial goals."
+      },
+      {
+        title: "The Silent Crisis in India: Are You Ready to Live Longer ?",
+        link: "https://www.thelogicaladvisor.com/the-silent-crisis/",
+        excerpt: "Retirement planning is increasingly about longevity risk, sustainable income, and lasting financial security."
+      },
+      {
+        title: "Financial Planning Value Proposition: It's So Much More Than Just Investments",
+        link: "https://www.thelogicaladvisor.com/financial-planning-value-proposition-its-so-much-more-than-just-investments/",
+        excerpt: "A planning-led perspective on why families need more than an investment conversation."
+      },
+      {
+        title: "Mastering the Wealth Equation",
+        link: "https://www.thelogicaladvisor.com/mastering-the-wealth-equation/",
+        excerpt: "A deeper look at disciplined wealth creation, behaviour, and long-term financial judgement."
+      },
+      {
+        title: "Why Will Planning Is Critical To Your Financial Plan",
+        link: "https://www.thelogicaladvisor.com/why-will-planning-is-critical-to-your-financial-plan/",
+        excerpt: "A continuity-focused article connecting succession thinking to the wider financial plan."
+      },
+      {
+        title: "Six critical mistakes to avoid in your Investment Portfolio",
+        link: "https://www.thelogicaladvisor.com/blog/",
+        excerpt: "Common portfolio mistakes often come from unmanaged behaviour, overlap, and unclear investment structure."
+      }
+    ];
+
+    function stripHtml(input) {
+      const text = input
+        .replace(/<script[\s\S]*?<\/script>/gi, "")
+        .replace(/<style[\s\S]*?<\/style>/gi, "")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      return text;
+    }
+
+    function truncate(text, limit = 150) {
+      if (text.length <= limit) return text;
+      return `${text.slice(0, limit).trim()}...`;
+    }
+
+    function estimateReadTime(text) {
+      const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(2, Math.round(wordCount / 180) || 2);
+    }
+
+    function extractFirstImageSrc(input) {
+      const match = input.match(/<img[^>]+src=["']([^"']+)["']/i);
+      return match ? match[1] : "";
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, (character) => {
+        const entities = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+
+        return entities[character] || character;
+      });
+    }
+
+    function normalisePost(post) {
+      const safeExcerpt = truncate((post.excerpt || "").trim(), 140);
+      const summarySource = (post.summary || post.excerpt || "").trim();
+      const safeSummary = truncate(summarySource || safeExcerpt, 520);
+
+      return {
+        title: (post.title || "Insight").trim(),
+        link: post.link || "https://www.thelogicaladvisor.com/blog/",
+        excerpt: safeExcerpt,
+        summary: safeSummary,
+        category: (post.category || "Insight").trim(),
+        readTime: post.readTime || estimateReadTime(summarySource || safeExcerpt),
+        image: post.image || ""
+      };
+    }
+
+    let homeBlogRailController = null;
+
+    function articleCardMarkup(post, options = {}) {
+      const isClone = Boolean(options.isClone);
+      const cloneAttrs = isClone ? ' aria-hidden="true" data-clone="true"' : "";
+      const tabIndex = isClone ? "-1" : "0";
+      const cardLabel = escapeHtml(`${post.title}. Read insight`);
+
+      return `
+        <article
+          class="insight-card${isClone ? " insight-card--clone" : ""}"
+          ${cloneAttrs}
+          data-post-index="${options.sourceIndex}"
+          role="link"
+          tabindex="${tabIndex}"
+          aria-label="${cardLabel}"
+        >
+          <div class="insight-card-body">
+            <h3>${escapeHtml(post.title)}</h3>
+            <p>${escapeHtml(post.excerpt)}</p>
+          </div>
+          <span class="insight-card-cta" aria-hidden="true">Read insight →</span>
+        </article>
+      `;
+    }
+
+    function createHomeBlogRail(posts) {
+      const rail = document.querySelector("[data-home-blog-rail]");
+      const viewport = rail?.querySelector("[data-home-blog-viewport]");
+      const track = document.getElementById("homeBlogFeed");
+
+      if (!rail || !viewport || !track || !posts.length) return null;
+
+      const desktopQuery = window.matchMedia("(min-width: 961px)");
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const visibleCount = 3;
+      let index = 0;
+      let intervalId = 0;
+      let resetAfterTransition = false;
+
+      const resolvedPosts = posts.map(normalisePost);
+
+      function shouldAutoRotate() {
+        return desktopQuery.matches && !reducedMotionQuery.matches && resolvedPosts.length > visibleCount;
+      }
+
+      function getStepWidth() {
+        const firstCard = track.querySelector(".insight-card");
+        if (!firstCard) return 0;
+
+        const styles = window.getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || "0");
+        return firstCard.getBoundingClientRect().width + gap;
+      }
+
+      function applyTransform(animate = true) {
+        if (!desktopQuery.matches) {
+          track.classList.add("home-blog-track--instant");
+          track.style.transform = "translate3d(0, 0, 0)";
+          return;
+        }
+
+        track.classList.toggle("home-blog-track--instant", !animate);
+        track.style.transform = `translate3d(-${getStepWidth() * index}px, 0, 0)`;
+
+        if (!animate) {
+          window.requestAnimationFrame(() => {
+            track.classList.remove("home-blog-track--instant");
+          });
+        }
+      }
+
+      function renderTrack() {
+        const trackPosts =
+          desktopQuery.matches && resolvedPosts.length > visibleCount
+            ? resolvedPosts.concat(resolvedPosts.slice(0, visibleCount))
+            : resolvedPosts;
+
+        track.innerHTML = trackPosts
+          .map((post, postIndex) =>
+            articleCardMarkup(post, {
+              sourceIndex: postIndex % resolvedPosts.length,
+              isClone: desktopQuery.matches && resolvedPosts.length > visibleCount && postIndex >= resolvedPosts.length
+            })
+          )
+          .join("");
+
+        index = 0;
+        resetAfterTransition = false;
+        applyTransform(false);
+        bindCards();
+      }
+
+      function navigateTo(postIndex) {
+        const post = resolvedPosts[postIndex];
+        if (!post) return;
+        window.open(post.link, "_blank", "noopener,noreferrer");
+      }
+
+      function bindCards() {
+        const cards = Array.from(track.querySelectorAll(".insight-card"));
+
+        cards.forEach((card) => {
+          const postIndex = Number(card.dataset.postIndex);
+
+          card.addEventListener("click", () => {
+            navigateTo(postIndex);
+          });
+
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              navigateTo(postIndex);
+            }
+          });
+        });
+      }
+
+      function stopAutoRotation() {
+        if (!intervalId) return;
+        window.clearInterval(intervalId);
+        intervalId = 0;
+      }
+
+      function startAutoRotation() {
+        stopAutoRotation();
+        if (!shouldAutoRotate()) return;
+
+        intervalId = window.setInterval(() => {
+          index += 1;
+          applyTransform(true);
+
+          if (index === resolvedPosts.length) {
+            resetAfterTransition = true;
+          }
+        }, 4200);
+      }
+
+      function handleTransitionEnd(event) {
+        if (event.target !== track || event.propertyName !== "transform" || !resetAfterTransition) return;
+
+        resetAfterTransition = false;
+        index = 0;
+        applyTransform(false);
+      }
+
+      function handleVisibilityChange() {
+        if (document.hidden) {
+          stopAutoRotation();
+        } else {
+          startAutoRotation();
+        }
+      }
+
+      function handleResize() {
+        if (!desktopQuery.matches) return;
+        applyTransform(false);
+      }
+
+      function handleModeChange() {
+        renderTrack();
+        startAutoRotation();
+      }
+
+      rail.addEventListener("mouseenter", stopAutoRotation);
+      rail.addEventListener("mouseleave", startAutoRotation);
+      rail.addEventListener("focusin", stopAutoRotation);
+      rail.addEventListener("focusout", startAutoRotation);
+      track.addEventListener("transitionend", handleTransitionEnd);
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      window.addEventListener("resize", handleResize);
+      desktopQuery.addEventListener("change", handleModeChange);
+      reducedMotionQuery.addEventListener("change", handleModeChange);
+
+      renderTrack();
+      startAutoRotation();
+
+      return {
+        destroy() {
+          stopAutoRotation();
+          rail.removeEventListener("mouseenter", stopAutoRotation);
+          rail.removeEventListener("mouseleave", startAutoRotation);
+          rail.removeEventListener("focusin", stopAutoRotation);
+          rail.removeEventListener("focusout", startAutoRotation);
+          track.removeEventListener("transitionend", handleTransitionEnd);
+          document.removeEventListener("visibilitychange", handleVisibilityChange);
+          window.removeEventListener("resize", handleResize);
+          desktopQuery.removeEventListener("change", handleModeChange);
+          reducedMotionQuery.removeEventListener("change", handleModeChange);
+        }
+      };
+    }
+
+    function renderPosts(posts) {
+      const target = document.getElementById("homeBlogFeed");
+      if (!target) return;
+
+      if (homeBlogRailController) {
+        homeBlogRailController.destroy();
+      }
+
+      homeBlogRailController = createHomeBlogRail(posts);
+    }
+
+    async function loadHomeBlogFeed() {
+      try {
+        const response = await fetch(homeFeedUrl);
+        if (!response.ok) throw new Error("Feed request failed");
+
+        const xml = await response.text();
+        const doc = new DOMParser().parseFromString(xml, "text/xml");
+        const items = Array.from(doc.querySelectorAll("item"));
+
+        if (!items.length) throw new Error("No feed items found");
+
+        const posts = items.map((item) => {
+          const title = item.querySelector("title")?.textContent?.trim() || "Article";
+          const link = item.querySelector("link")?.textContent?.trim() || "https://www.thelogicaladvisor.com/blog/";
+          const htmlContent =
+            item.querySelector("content\\:encoded")?.textContent ||
+            item.querySelector("description")?.textContent ||
+            "";
+          const plainText = stripHtml(htmlContent);
+          const category = item.querySelector("category")?.textContent?.trim() || "Insight";
+
+          return normalisePost({
+            title,
+            link,
+            excerpt: truncate(plainText, 140),
+            summary: truncate(plainText, 240),
+            category,
+            readTime: estimateReadTime(plainText),
+            image: extractFirstImageSrc(htmlContent)
+          });
+        });
+
+        renderPosts(posts);
+      } catch (error) {
+        renderPosts(fallbackPosts);
+      }
+    }
+
+    function initHomeReveals() {
+      const sections = document.querySelectorAll(".home-scroll-reveal");
+      if (!sections.length) return;
+
+      if (!("IntersectionObserver" in window)) {
+        sections.forEach((section) => section.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    }
+
+    function initHomeActionStory() {
+      const section = document.querySelector("[data-home-action-story]");
+      if (!section) return;
+
+      const panels = Array.from(section.querySelectorAll("[data-story-panel]"));
+      const steps = Array.from(section.querySelectorAll("[data-story-step]"));
+      if (!panels.length || panels.length !== steps.length) return;
+
+      const desktopQuery = window.matchMedia("(min-width: 1025px)");
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let observer = null;
+      let rafId = 0;
+      let inView = false;
+      let activeIndex = -1;
+
+      function applyStaticState() {
+        section.classList.remove("is-enhanced");
+        section.style.removeProperty("--story-progress");
+        activeIndex = -1;
+
+        steps.forEach((step) => {
+          step.classList.remove("is-active");
+          step.removeAttribute("aria-current");
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.add("is-active");
+          panel.removeAttribute("aria-hidden");
+        });
+      }
+
+      function setActiveState(index, progress) {
+        const nextIndex = Math.max(0, Math.min(panels.length - 1, index));
+        activeIndex = nextIndex;
+        section.style.setProperty("--story-progress", progress.toFixed(3));
+
+        steps.forEach((step, stepIndex) => {
+          const isActive = stepIndex === nextIndex;
+          step.classList.toggle("is-active", isActive);
+
+          if (isActive) {
+            step.setAttribute("aria-current", "step");
+          } else {
+            step.removeAttribute("aria-current");
+          }
+        });
+
+        panels.forEach((panel, panelIndex) => {
+          const isActive = panelIndex === nextIndex;
+          panel.classList.toggle("is-active", isActive);
+          panel.setAttribute("aria-hidden", String(!isActive));
+        });
+      }
+
+      function updateStory() {
+        rafId = 0;
+        if (!section.classList.contains("is-enhanced")) return;
+
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollSpan = Math.max(1, section.offsetHeight - viewportHeight);
+        const progress = Math.min(1, Math.max(0, -rect.top / scrollSpan));
+        const index = Math.min(panels.length - 1, Math.round(progress * (panels.length - 1)));
+
+        if (index !== activeIndex || section.style.getPropertyValue("--story-progress") !== progress.toFixed(3)) {
+          setActiveState(index, progress);
+        }
+      }
+
+      function requestUpdate() {
+        if (rafId) return;
+        rafId = window.requestAnimationFrame(updateStory);
+      }
+
+      function disconnectObserver() {
+        if (!observer) return;
+        observer.disconnect();
+        observer = null;
+      }
+
+      function connectObserver() {
+        if (!("IntersectionObserver" in window)) {
+          inView = true;
+          return;
+        }
+
+        disconnectObserver();
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.target !== section) return;
+              inView = entry.isIntersecting;
+              if (inView) requestUpdate();
+            });
+          },
+          {
+            threshold: 0,
+            rootMargin: "20% 0px 20% 0px"
+          }
+        );
+        observer.observe(section);
+      }
+
+      function syncMode() {
+        const shouldEnhance = desktopQuery.matches && !reducedMotionQuery.matches;
+
+        if (!shouldEnhance) {
+          disconnectObserver();
+          inView = false;
+          if (rafId) {
+            window.cancelAnimationFrame(rafId);
+            rafId = 0;
+          }
+          applyStaticState();
+          return;
+        }
+
+        section.classList.add("is-enhanced");
+        connectObserver();
+        setActiveState(0, 0);
+        requestUpdate();
+      }
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!section.classList.contains("is-enhanced")) return;
+          if (!("IntersectionObserver" in window) || inView) {
+            requestUpdate();
+          }
+        },
+        { passive: true }
+      );
+
+      window.addEventListener("resize", requestUpdate);
+      desktopQuery.addEventListener("change", syncMode);
+      reducedMotionQuery.addEventListener("change", syncMode);
+
+      syncMode();
+    }
+function initHomeClientStory() {
+  const section = document.querySelector("[data-home-client-story]");
+  if (!section) return;
+
+  const steps = Array.from(section.querySelectorAll("[data-client-step]"));
+  const progressItems = Array.from(section.querySelectorAll("[data-client-progress]"));
+  if (!steps.length || steps.length !== progressItems.length) return;
+
+  const desktopQuery = window.matchMedia("(min-width: 1025px)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let observer = null;
+  let rafId = 0;
+  let inView = false;
+  let activeIndex = -1;
+
+  function applyStaticState() {
+    section.classList.remove("is-enhanced", "is-resolved");
+    activeIndex = -1;
+
+    progressItems.forEach((item) => {
+      item.classList.remove("is-active", "is-complete");
+      item.removeAttribute("aria-current");
+    });
+
+    steps.forEach((step) => {
+      step.classList.remove("is-active", "is-complete");
+    });
+  }
+
+  function setActiveState(index) {
+    const nextIndex = Math.max(0, Math.min(steps.length - 1, index));
+    activeIndex = nextIndex;
+    section.classList.toggle("is-resolved", nextIndex === steps.length - 1);
+
+    progressItems.forEach((item, itemIndex) => {
+      const isActive = itemIndex === nextIndex;
+      const isComplete = itemIndex < nextIndex;
+      item.classList.toggle("is-active", isActive);
+      item.classList.toggle("is-complete", isComplete);
+
+      if (isActive) {
+        item.setAttribute("aria-current", "step");
+      } else {
+        item.removeAttribute("aria-current");
+      }
+    });
+
+    steps.forEach((step, stepIndex) => {
+      step.classList.toggle("is-active", stepIndex === nextIndex);
+      step.classList.toggle("is-complete", stepIndex < nextIndex);
+    });
+  }
+
+  function updateStory() {
+    rafId = 0;
+    if (!section.classList.contains("is-enhanced")) return;
+
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const targetY = viewportHeight * 0.42;
+    let nextIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    steps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      const center = rect.top + rect.height * 0.5;
+      const distance = Math.abs(center - targetY);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        nextIndex = index;
+      }
+    });
+
+    if (nextIndex !== activeIndex) {
+      setActiveState(nextIndex);
+    }
+  }
+
+  function requestUpdate() {
+    if (rafId) return;
+    rafId = window.requestAnimationFrame(updateStory);
+  }
+
+  function disconnectObserver() {
+    if (!observer) return;
+    observer.disconnect();
+    observer = null;
+  }
+
+  function connectObserver() {
+    if (!("IntersectionObserver" in window)) {
+      inView = true;
+      return;
+    }
+
+    disconnectObserver();
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target !== section) return;
+          inView = entry.isIntersecting;
+          if (inView) requestUpdate();
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: "18% 0px 18% 0px"
+      }
+    );
+    observer.observe(section);
+  }
+
+  function syncMode() {
+    const shouldEnhance = desktopQuery.matches && !reducedMotionQuery.matches;
+
+    if (!shouldEnhance) {
+      disconnectObserver();
+      inView = false;
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      applyStaticState();
+      return;
+    }
+
+    section.classList.add("is-enhanced");
+    connectObserver();
+    setActiveState(0);
+    requestUpdate();
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!section.classList.contains("is-enhanced")) return;
+      if (!("IntersectionObserver" in window) || inView) {
+        requestUpdate();
+      }
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", requestUpdate);
+  desktopQuery.addEventListener("change", syncMode);
+  reducedMotionQuery.addEventListener("change", syncMode);
+
+  syncMode();
+}
+
+    function initHomePage() {
+      document.body.classList.add("home-reveal-enabled");
+      loadHomeBlogFeed();
+      initHomeReveals();
+      initHomeActionStory();
+      initHomeClientStory();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initHomePage);
+    } else {
+      initHomePage();
+    }
+  </script>
+</body>
+</html>
