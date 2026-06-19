@@ -1,7 +1,6 @@
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const riskProfilerLink = "https://goalchicapital.github.io/risk-profiler/";
 const blogLink = "https://www.thelogicaladvisor.com/blog/";
-const loginLink = "https://goalchicapital.my-portfolio.co.in/app/#/login";
 
 const planningPages = new Set([
   "goal-based-planning.html",
